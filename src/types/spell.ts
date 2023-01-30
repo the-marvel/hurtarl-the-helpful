@@ -4,7 +4,7 @@ export interface Spell {
     Runes: string[];
     Points: number;
     Attributes: string[];
-    description: string;
+    description: string[];
 }
 
 export enum SpellType {

@@ -53,7 +53,7 @@ export class SpellList extends Component<IProps, IState> {
   fetchSpells (query: string = "") {
       return this.spellSvc.AllSpells
         .filter(spell => query ==="" ||
-          spell.Name.includes(query));
+          spell.Name.toLowerCase().includes(query.toLowerCase()));
    }
 
    getSpellDivs (type: SpellType) {
@@ -64,7 +64,9 @@ export class SpellList extends Component<IProps, IState> {
               <h2>{spell.Name}</h2><span>{spell.Runes.join(', ')}</span><br/>
               <span>Points: {spell.Points}</span><br/>
               <span>{spell.Attributes.join(', ')}</span><br/>
-              <p><span>{spell.description}</span></p>
+              {spell.description.map(paragraph => {
+                return (<p>{paragraph}</p>)
+              })}
             </div>)
      });
      else return [];
