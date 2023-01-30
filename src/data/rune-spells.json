@@ -1,18 +1,17 @@
 [
     {
-      "Name": "esse",
+      "Name": "Absorption",
       "Runes": [
-        "tempor",
-        "id",
-        "amet"
+        "Earth",
+        "Darkness"
       ],
-      "Points": 3,
+      "Points": 1,
       "Attributes": [
-        "eiusmod",
-        "anim",
-        "culpa"
+        "Ranged",
+        "Temporal",
+        "Stackable"
       ],
-      "description": "Pariatur proident do ipsum officia. Lorem amet ut adipisicing in commodo velit veniam enim est adipisicing esse ut tempor. Anim nisi fugiat cillum sit eu ut incididunt fugiat Lorem esse. Ex exercitation culpa tempor incididunt eu incididunt deserunt reprehenderit fugiat velit consequat sunt aliqua incididunt. Eu labore magna eu nulla magna ut laborum dolor nulla. Consequat quis eu aute laborum pariatur reprehenderit sit veniam tempor.\r\nAute mollit cillum magna cillum et anim duis velit est sit aute reprehenderit ad duis. Mollit consectetur et cupidatat sit enim commodo reprehenderit mollit. Magna excepteur deserunt pariatur ipsum fugiat laborum aute. Deserunt id mollit culpa sit reprehenderit est consectetur. Quis veniam irure aute ut ex id sint quis velit. Amet consectetur consectetur laborum aliquip ipsum. Consequat consequat do incididunt qui culpa cillum.\r\n"
+      "description": "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.\r\nEach point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.\r\nThe magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.\r\nAbsorption can be cast on others, but the caster of the spell gets the absorbed magic points. This spell can protect anything, including inanimate objects."
     },
     {
       "Name": "ullamco",

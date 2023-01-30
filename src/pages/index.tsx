@@ -1,60 +1,82 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import React, { Component, useState } from 'react';
+import type { HeadFC, IPluginRefOptions, PageProps } from "gatsby"
 import { SpellService } from "../services/spells.service"
-import { Spell } from "../types/spell";
-import { useState } from "react";
+import { Spell, SpellType } from "../types/spell";
 
-var [spells, setSpells] = useState(fetchSpells(''));
-
-const updateState = (index: any) => (e: any) => {
-  const newArray = spells.map((item, i) => {
-    if (index === i) {
-      return { ...item, [e.target.name]: e.target.value };
-    } else {
-      return item;
-    }
-  });
-  setSpells(newArray);
-};
-
-function fetchSpells(query: string = "") {
- return new SpellService().RuneSpells
-  .filter(spell => {
-    console.log('fetch', query);
-    
-    return !query ||
-    query.toString().trim() === "" ||
-     spell.Name.includes(query) ||
-     spell.Attributes.join('').includes(query) ||
-     spell.Runes.join('').includes(query) ||
-     spell.description.includes(query)
-  })
-  .map( spell => {   
-      return (<div key={spell.Name} style={{display: "block"}}>
-        <h2>{spell.Name}</h2><span>{spell.Runes.join(', ')}</span><br/>
-        <span>Points: {spell.Points}</span><br/>
-        <span>{spell.Attributes.join(', ')}</span><br/>
-        <p><span>{spell.description}</span></p>
-        </div>)
-  });
+export interface IProps {
 }
 
-function filterSpells (event: any) {
-  console.log('event handler', event);
+export interface IState {
+  query?: string;
+  RuneSpells?: Spell[]
+  SpiritSpells?: Spell[]
+  DisplayedSpells?: Spell[]
+}
+
+export class SpellList extends Component<IProps, IState> {
+  spellSvc: SpellService;
   
-  spells = fetchSpells(event.target.value);
-  console.log('after event handler', spells.length);
+  constructor (props: {}) {
+    super(props);
+
+    this.spellSvc = new SpellService();
+
+    this.state = {
+      query: '',
+      RuneSpells: [],
+      SpiritSpells: [],
+      DisplayedSpells: this.fetchSpells()
+    }
+
+    console.log('state', this.state);
+    
+  }
+
+  render() {
+    return(
+      <div>
+        <main>
+          <input type={"search"}
+              onChange={(e) => this.filterSpells(e)}
+              name='query'
+              value={this.state.query}>
+          </input>
+          <h1>Rune Spells</h1>
+          <div>{this.getSpellDivs(SpellType.RuneSpell)}</div>
+          <h1>Spirit Spells</h1>
+          <div>{this.getSpellDivs(SpellType.SpritSpell)}</div>
+        </main>
+      </div>
+    );
+  }
+
+  fetchSpells (query: string = "") {
+      return this.spellSvc.AllSpells
+        .filter(spell => query ==="" ||
+          spell.Name.includes(query));
+   }
+
+   getSpellDivs (type: SpellType) {
+    if (!!this.state.DisplayedSpells)
+      return this.state.DisplayedSpells.filter(spell => spell.Type === type)
+        .map( spell => {   
+          return (<div key={spell.Name} style={{display: "block"}}>
+              <h2>{spell.Name}</h2><span>{spell.Runes.join(', ')}</span><br/>
+              <span>Points: {spell.Points}</span><br/>
+              <span>{spell.Attributes.join(', ')}</span><br/>
+              <p><span>{spell.description}</span></p>
+            </div>)
+     });
+     else return [];
+   }
+
+   filterSpells(event: any) {
+      this.setState({query: event.target.value});
+      const spells = this.fetchSpells(event.target.value);
+      this.setState({DisplayedSpells: spells});
+   }
 }
 
-const IndexPage: React.FC<PageProps> = () => {
-  return (
-    <main>
-      <input type={"search"} onChange={filterSpells} name='query'></input>
-      {spells}
-    </main>
-  )
-}
-
-export default IndexPage
+export default SpellList
 
 export const Head: HeadFC = () => <title>Home Page</title>
