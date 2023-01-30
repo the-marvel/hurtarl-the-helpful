@@ -4,9 +4,9 @@ import { SpellService } from "../services/spells.service"
 import { Spell } from "../types/spell";
 import { useState } from "react";
 
-const [spells, setSpells] = useState(fetchSpells(''));
+var [spells, setSpells] = useState(fetchSpells(''));
 
-const updateState = (index) => (e) => {
+const updateState = (index: any) => (e: any) => {
   const newArray = spells.map((item, i) => {
     if (index === i) {
       return { ...item, [e.target.name]: e.target.value };
