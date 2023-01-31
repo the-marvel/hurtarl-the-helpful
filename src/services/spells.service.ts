@@ -1,5 +1,5 @@
-import * as runeSpellsJson from '../data/rune-spells.json'
-import * as spiritSpellsJson from '../data/spirit-spells.json'
+import * as runeSpellsJson from '../content/rune-spells.json'
+import * as spiritSpellsJson from '../content/spirit-spells.json'
 import { Spell, SpellType } from '../types/spell';
 
 export class SpellService {
