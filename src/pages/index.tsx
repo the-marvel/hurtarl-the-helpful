@@ -36,9 +36,11 @@ export class SpellList extends Component<IProps, IState> {
     return(
       <div>
         <main>
+          <label htmlFor="query">Filter</label>
           <input type={"search"}
               onChange={(e) => this.filterSpells(e)}
               name='query'
+              id="query"
               value={this.state.query}>
           </input>
           <h1>Rune Spells</h1>
