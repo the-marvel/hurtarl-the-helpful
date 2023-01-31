@@ -13,7 +13,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}\\src\\content`}
+        path: `${__dirname}/src/content`}
     }
   ],
 }
