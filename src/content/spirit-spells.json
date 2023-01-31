@@ -1,0 +1,102 @@
+[
+    {
+      "Name": "deserunt",
+      "Runes": [
+        "consectetur",
+        "anim",
+        "consequat"
+      ],
+      "Points": 1,
+      "Attributes": [
+        "anim",
+        "ut",
+        "elit"
+      ],
+      "description": [
+        "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
+        "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
+        "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
+        "Absorption can be cast on others, but the caster of the spell gets the absorbed magic points. This spell can protect anything, including inanimate objects."
+      ]
+    },
+    {
+      "Name": "velit",
+      "Runes": [
+        "duis",
+        "minim",
+        "ex"
+      ],
+      "Points": 3,
+      "Attributes": [
+        "sit",
+        "elit",
+        "est"
+      ],
+      "description": [
+        "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
+        "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
+        "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
+        "Absorption can be cast on others, but the caster of the spell gets the absorbed magic points. This spell can protect anything, including inanimate objects."
+      ]
+    },
+    {
+      "Name": "eiusmod",
+      "Runes": [
+        "proident",
+        "nisi",
+        "dolore"
+      ],
+      "Points": 3,
+      "Attributes": [
+        "amet",
+        "deserunt",
+        "in"
+      ],
+      "description": [
+        "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
+        "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
+        "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
+        "Absorption can be cast on others, but the caster of the spell gets the absorbed magic points. This spell can protect anything, including inanimate objects."
+      ]
+    },
+    {
+      "Name": "nulla",
+      "Runes": [
+        "ut",
+        "labore",
+        "aliqua"
+      ],
+      "Points": 2,
+      "Attributes": [
+        "esse",
+        "ad",
+        "excepteur"
+      ],
+      "description": [
+        "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
+        "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
+        "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
+        "Absorption can be cast on others, but the caster of the spell gets the absorbed magic points. This spell can protect anything, including inanimate objects."
+      ]
+    },
+    {
+      "Name": "velit",
+      "Runes": [
+        "ut",
+        "et",
+        "quis"
+      ],
+      "Points": 2,
+      "Attributes": [
+        "veniam",
+        "consectetur",
+        "commodo"
+      ],
+      "description": [
+        "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
+        "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
+        "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
+        "Absorption can be cast on others, but the caster of the spell gets the absorbed magic points. This spell can protect anything, including inanimate objects."
+      ]
+    }
+  ]
