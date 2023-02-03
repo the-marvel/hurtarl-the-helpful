@@ -1,13 +1,15 @@
 export interface Spell {
     Name: string;
-    Type: SpellType;
+    Family: Family;
     Runes: string[];
     Points: number;
-    Attributes: string[];
-    description: string[];
+    CastRange: string,
+    Duration: string,
+    SpellType: string,
+    Description: string[];
 }
 
-export enum SpellType {
+export enum Family {
     Sprit,
     Rune
 }

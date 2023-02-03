@@ -7,12 +7,10 @@
         "consequat"
       ],
       "Points": 1,
-      "Attributes": [
-        "anim",
-        "ut",
-        "elit"
-      ],
-      "description": [
+      "CastRange": "Ranged",
+      "Duration": "Temporal",
+      "SpellType": "Stackable",
+      "Description": [
         "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
         "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
         "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
@@ -27,12 +25,10 @@
         "ex"
       ],
       "Points": 3,
-      "Attributes": [
-        "sit",
-        "elit",
-        "est"
-      ],
-      "description": [
+      "CastRange": "Ranged",
+      "Duration": "Temporal",
+      "SpellType": "Stackable",
+      "Description": [
         "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
         "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
         "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
@@ -47,12 +43,10 @@
         "dolore"
       ],
       "Points": 3,
-      "Attributes": [
-        "amet",
-        "deserunt",
-        "in"
-      ],
-      "description": [
+      "CastRange": "Ranged",
+      "Duration": "Temporal",
+      "SpellType": "Stackable",
+      "Description": [
         "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
         "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
         "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",
@@ -67,12 +61,10 @@
         "aliqua"
       ],
       "Points": 2,
-      "Attributes": [
-        "esse",
-        "ad",
-        "excepteur"
-      ],
-      "description": [
+      "CastRange": "Ranged",
+      "Duration": "Temporal",
+      "SpellType": "Stackable",
+      "Description": [
         "This spell absorbs enemy spells, converting them into magic points, and makes those points available to the caster. It also screens out the effects of Absorbed incoming spells. It must be cast beforehand and has no effect on spells already in effect.",
         "Each point of Absorption soaks up 1 point of Rune magic, or any 2 points of sorcery or spirit magic spells and converts them into magic points. Each 1 point of Rune magic is converted into 2 magic points. The Absorption spell does not soak up part of a spell. If the incoming spell has more total magic points than can be Absorbed, then it takes effect normally.",
         "The magic points gained this way remain suspended within the caster’s aura, usable as they wish. When the spell expires, or is dispelled, any magic points exceeding the user’s current POW dissipate.",

@@ -1,6 +1,6 @@
 import runeSpellsJson from '../content/rune-spells.json'
 import spiritSpellsJson from '../content/spirit-spells.json'
-import { Spell, SpellType } from '../types/spell';
+import { Spell, Family } from '../types/spell';
 
 export class SpellService {
     readonly RuneSpells: Spell[] = [];
@@ -13,10 +13,10 @@ export class SpellService {
 
     loadData () {
         runeSpellsJson.forEach(spell => {
-            this.RuneSpells.push({Type: SpellType.Rune, ...spell})
+            this.RuneSpells.push({Family: Family.Rune, ...spell})
         });
         spiritSpellsJson.forEach(spell => {
-            this.SpiritSpells.push({Type: SpellType.Sprit, ...spell})
+            this.SpiritSpells.push({Family: Family.Sprit, ...spell})
         });
         this.AllSpells.push(...this.RuneSpells.concat(this.SpiritSpells));        
     }

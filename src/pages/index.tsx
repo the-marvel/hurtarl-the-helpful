@@ -1,15 +1,14 @@
 import React, { Component, useState } from "react";
+import Tooltip from "@mui/material/Tooltip";
 import type { HeadFC, IPluginRefOptions, PageProps } from "gatsby";
 import { SpellService } from "../services/spells.service";
-import { Spell, SpellType } from "../types/spell";
+import { Spell, Family } from "../types/spell";
 import "../images/sprite-map.css"
 
 export interface IProps {}
 
 export interface IState {
   query?: string;
-  RuneSpells?: Spell[];
-  SpiritSpells?: Spell[];
   DisplayedSpells?: Spell[];
 }
 
@@ -23,10 +22,6 @@ export class SpellList extends Component<IProps, IState> {
 
     this.state = {
       query: "",
-      RuneSpells: this.fetchSpells().filter((s) => s.Type === SpellType.Rune),
-      SpiritSpells: this.fetchSpells().filter(
-        (s) => s.Type === SpellType.Sprit
-      ),
       DisplayedSpells: this.fetchSpells(),
     };
   }
@@ -46,16 +41,22 @@ export class SpellList extends Component<IProps, IState> {
           <div>
             {this.state.DisplayedSpells?.map((spell) => (
               <div key={spell.Name} style={{ display: "block" }}>
-                <h2>{spell.Name} {spell.Runes.map(r => {
-                    return <img className={r.toLowerCase()}></img>
-                  })}</h2>
-                <strong>{SpellType[spell.Type]} Spell</strong>
+                <h2>{spell.Name}</h2>
+                  <div className="rune-list">
+                    {spell.Runes.map(r => {
+                      return  <Tooltip title={r} placement="top" arrow><span>
+                          <img className={'rune-list ' + r.toLowerCase()}  ></img>
+                        </span>
+                      </Tooltip>
+                    })}
+                  </div>
+                <strong>{Family[spell.Family]} Spell</strong>
                 <br />
                 <span>Points: {spell.Points}</span>
                 <br />
-                <span>{spell.Attributes.join(", ")}</span>
+                <span>{spell.CastRange}, {spell.Duration}, {spell.SpellType}</span>
                 <br />
-                {spell.description.map((paragraph) => {
+                {spell.Description.map((paragraph) => {
                   return <p>{paragraph}</p>;
                 })}
               </div>
@@ -68,8 +69,6 @@ export class SpellList extends Component<IProps, IState> {
 
   reset() {
     this.setState({ query: "" });
-    this.setState({ RuneSpells: this.spellSvc.RuneSpells });
-    this.setState({ SpiritSpells: this.spellSvc.SpiritSpells });
     this.setState({ DisplayedSpells: this.spellSvc.AllSpells });
   }
 
@@ -83,51 +82,50 @@ export class SpellList extends Component<IProps, IState> {
     });
   }
 
-  getSpellDivs(type: SpellType) {
-    if (!!this.state.DisplayedSpells)
-      return this.state.DisplayedSpells.filter(
-        (spell) => spell.Type === type
-      ).map((spell) => {
-        return (
-          <div key={spell.Name} style={{ display: "block" }}>
-            <h2>{spell.Name}</h2>
-            <ul>{spell.Runes.map(r => {
-              return <li className={r.toLowerCase()}>{r}</li>
-            })}</ul>
-            <br />
-            <span>Points: {spell.Points}</span>
-            <br />
-            <span>{spell.Attributes.join(", ")}</span>
-            <br />
-            {spell.description.map((paragraph) => {
-              return <p>{paragraph}</p>;
-            })}
-          </div>
-        );
-      });
-    else return [];
-  }
+  // getSpellDivs(type: Family) {
+  //   if (!!this.state.DisplayedSpells)
+  //     return this.state.DisplayedSpells.filter(
+  //       (spell) => spell.Family === type
+  //     ).map((spell) => {
+  //       return (
+  //         <div key={spell.Name} style={{ display: "block" }}>
+  //           <h2>{spell.Name}</h2>
+  //           <ul>{spell.Runes.map(r => {
+  //             return <li className={r.toLowerCase()}>{r}</li>
+  //           })}</ul>
+  //           <br />
+  //           <span>Points: {spell.Points}</span>
+  //           <br />
+  //           <span>{spell.Attributes.join(", ")}</span>
+  //           <br />
+  //           {spell.description.map((paragraph) => {
+  //             return <p>{paragraph}</p>;
+  //           })}
+  //         </div>
+  //       );
+  //     });
+  //   else return [];
+  // }
 
   filterSpells(event: any) {
     this.setState({ query: event.target.value });
+    const q = (event.target.value ?? '').toLowerCase();
 
-    if (event.target.value === '')
-      this.setState({DisplayedSpells: this.spellSvc.AllSpells})
+    console.log('query', q, 'state', this.state.DisplayedSpells);
+    
+
+    if (q === '')
+      this.setState({DisplayedSpells: this.spellSvc.AllSpells},
+        () => console.log('query', q, 'state', this.state.DisplayedSpells))
     else
     this.setState({
-      DisplayedSpells: this.state.DisplayedSpells?.filter((s) => {
-        console.log(
-          "inside filter",
-          s.Name.toLowerCase(),
-          event.target.value.toLowerCase(),
-          s.Name.toLowerCase().includes(event.target.value.toLowerCase())
-        );
-
-        return event.target.value === '' || s.Name.toLowerCase().includes(event.target.value.toLowerCase());
+      DisplayedSpells: this.spellSvc.AllSpells.filter((s) => {
+        console.log(s.Name.toLowerCase(), q.toLowerCase(), s.Name.toLowerCase().includes(q.toLowerCase()));
+        
+        return s.Name.toLowerCase().includes(q.toLowerCase());
       }),
-    });
-
-    console.log("filter", event.target.value, this.state.DisplayedSpells);
+    }, () => console.log('query', q, 'state', this.state.DisplayedSpells));
+    
   }
 }
 
