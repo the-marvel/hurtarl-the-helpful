@@ -1,0 +1,75 @@
+.rune-list {
+  position: relative;
+}
+
+.rune-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+
+.rune-list li,
+.navlist a {
+  height: 15px;
+  display: block;
+}
+
+.rune-list li img {
+  height: 30px;
+  width: 30px;
+  display: list-item;
+}
+
+.air {
+  background: url("imgs/runequest_runes.png") no-repeat -43px -34px;
+  width: 54px;
+  height: 61px;
+}
+.beast {
+	background: url('imgs/runequest_runes.png') no-repeat -133px -39px;
+	width: 61px;
+	height: 51px;
+}
+.chaos {
+	background: url('imgs/runequest_runes.png') no-repeat -228px -41px;
+	width: 65px;
+	height: 48px;
+}
+.disorder {
+	background: url('imgs/runequest_runes.png') no-repeat -347px -32px;
+	width: 42px;
+	height: 64px;
+}
+.earth {
+	background: url('imgs/runequest_runes.png') no-repeat -440px -35px;
+	width: 56px;
+	height: 55px;
+}
+.fertility {
+	background: url('imgs/runequest_runes.png') no-repeat -551px -33px;
+	width: 54px;
+	height: 57px;
+}
+.cold {
+	background: url('imgs/runequest_runes.png') no-repeat -653px -33px;
+	width: 60px;
+	height: 58px;
+}
+.harmony {
+	background: url('imgs/runequest_runes.png') no-repeat -763px -33px;
+	width: 62px;
+	height: 56px;
+}
+.man {
+	background: url('imgs/runequest_runes.png') no-repeat -47px -136px;
+	width: 50px;
+	height: 56px;
+}
+
+.law {
+	background: url('imgs/runequest_runes.png') no-repeat -225px -139px;
+	width: 58px;
+	height: 49px;
+}

@@ -8,6 +8,6 @@ export interface Spell {
 }
 
 export enum SpellType {
-    SpritSpell,
-    RuneSpell
+    Sprit,
+    Rune
 }

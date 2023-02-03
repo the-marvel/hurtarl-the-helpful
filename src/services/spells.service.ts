@@ -3,9 +3,9 @@ import spiritSpellsJson from '../content/spirit-spells.json'
 import { Spell, SpellType } from '../types/spell';
 
 export class SpellService {
-    RuneSpells: Spell[] = [];
-    SpiritSpells: Spell[] = [];
-    AllSpells: Spell[] = [];
+    readonly RuneSpells: Spell[] = [];
+    readonly SpiritSpells: Spell[] = [];
+    readonly AllSpells: Spell[] = [];
 
     constructor() {
         this.loadData();
@@ -13,13 +13,11 @@ export class SpellService {
 
     loadData () {
         runeSpellsJson.forEach(spell => {
-            this.RuneSpells.push({Type: SpellType.RuneSpell, ...spell})
+            this.RuneSpells.push({Type: SpellType.Rune, ...spell})
         });
         spiritSpellsJson.forEach(spell => {
-            this.SpiritSpells.push({Type: SpellType.SpritSpell, ...spell})
+            this.SpiritSpells.push({Type: SpellType.Sprit, ...spell})
         });
-        this.AllSpells = this.RuneSpells.concat(this.SpiritSpells);
-        console.log('spell svc load', this.AllSpells);
-        
+        this.AllSpells.push(...this.RuneSpells.concat(this.SpiritSpells));        
     }
 }
