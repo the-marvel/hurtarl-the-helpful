@@ -1,9 +1,8 @@
 import React, { Component, useState } from "react";
-import type { HeadFC, IPluginRefOptions, PageProps } from "gatsby";
-import Tooltip from "@mui/material/Tooltip";
 import { SpellService } from "../../services/spells.service";
 import { IProps } from "../../types/generics";
 import { Spell, Family } from "../../types/spell";
+import SpellTitle from "./spell.component";
 
 export interface IState {
     query?: string;
@@ -37,26 +36,7 @@ export class SpellList extends Component<IProps, IState> {
           </input>
           <div>
             {this.state.DisplayedSpells?.map((spell) => (
-              <div key={spell.Name} style={{ display: "block" }}>
-                <h2>{spell.Name}</h2>
-                  <div className="rune-list">
-                    {spell.Runes.map(r => {
-                      return  <Tooltip title={r} placement="top" arrow><span>
-                          <img className={'rune-list ' + r.toLowerCase()}  ></img>
-                        </span>
-                      </Tooltip>
-                    })}
-                  </div>
-                <strong>{Family[spell.Family]} Spell</strong>
-                <br />
-                <span>Points: {spell.Points}</span>
-                <br />
-                <span>{spell.CastRange}, {spell.Duration}, {spell.SpellType}</span>
-                <br />
-                {spell.Description.map((paragraph) => {
-                  return <p>{paragraph}</p>;
-                })}
-              </div>
+              <SpellTitle parentToChild={spell}></SpellTitle>
             ))}
           </div>
         </div>
